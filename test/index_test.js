@@ -139,5 +139,95 @@ describe('Calculate', () => {
 
       assert.equal(result, expected);
     })
-  })  
+  }) 
+
+  describe('.exponential', () => {
+    it('returns the result of a base raised to a power', () => {
+      const base = 5;
+      const power = 3;
+      const expected = 125;
+
+      const result = Calculate.exponential(base, power);
+
+      assert.equal(result, expected);
+    })
+
+    it('returns 1 when the exponent is 0', () => {
+      const base = 7;
+      const power = 0;
+      const expected = 1;
+
+      const result = Calculate.exponential(base, power);
+
+      assert.equal(result, expected);
+    })
+
+  }) 
+
+
+  describe('.max', () => {
+    it('returns the maximum number in an array', () => {
+      const inputArray = [12, 2, 23, 65, 123];
+      const expected = 123;
+
+      const result = Calculate.max(inputArray);
+
+      assert.equal(result, expected);
+
+    })
+
+    it('throws an Error when the array is empty', () => {
+      const inputArray = [];
+      const expected = /array is empty/;
+
+      const result = () => {Calculate.max(inputArray)};
+
+      assert.throws(result, expected);
+    })
+  })
+
+
+  describe('.min', () => {
+    it('returns the minimum number in an array', () => {
+      const inputArray = [5, 23, 54, 1];
+      const expected = 1;
+
+      const result = Calculate.min(inputArray);
+
+      assert.equal(result, expected);
+    })
+
+    it('throws an Error when the array is empty', () => {
+      const inputArray = [];
+      const expected = /array is empty/;
+
+      const result = () => {Calculate.min(inputArray)};
+
+      assert.throws(result, expected);
+    })
+  })
+
+  describe('.average', () => {
+    it('returns the average value of an array', () => {
+      const inputArray = [5, 23, 54, 1];
+      const expected = 20.75;
+
+      const result = Calculate.average(inputArray);
+
+      assert.equal(result, expected);
+    })
+
+    it('returns the average value of an array', () => {
+      const inputArray = [5, 23, 54, 1];
+      const expected = 20.75;
+
+      const result = Calculate.average(inputArray);
+
+      assert.equal(result, expected);
+    })
+
+  })
+
+
+
 });

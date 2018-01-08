@@ -45,7 +45,45 @@ const Calculate = {
     } else {
       return input;
     }
+  },
+
+  exponential(base, exponent) {
+    let accumulator = 1;
+    for (let iterator = 0; iterator < exponent; iterator++){
+      accumulator *= base;
+    }
+    return accumulator;
+  },
+
+  max(inputArray) {
+    if(inputArray.length === 0){
+      throw new Error('ERROR: array is empty');
+    }
+    let accumulator = inputArray[0];
+    inputArray.forEach((value) => {
+      if(value > accumulator){
+        accumulator = value;
+      }
+    })
+    return accumulator;
+  },
+
+  min(inputArray) {
+    if(inputArray.length === 0){
+      throw new Error('ERROR: array is empty');
+    }
+    let accumulator = inputArray[0];
+    inputArray.forEach((value) => {
+      if(value < accumulator){
+        accumulator = value;
+      }
+    })
+    return accumulator;
+  },
+  average(inputArray) {
+    return inputArray.reduce((p,c) => p + c, 0) / inputArray.length;
   }
+
 }
 
 
